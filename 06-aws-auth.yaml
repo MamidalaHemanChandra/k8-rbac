@@ -12,6 +12,8 @@ data:
       username: heman
       groups:
         - roboshop-admin
+        - storage-reader
+        
 kind: ConfigMap
 metadata:
   name: aws-auth
