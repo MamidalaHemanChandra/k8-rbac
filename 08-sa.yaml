@@ -7,7 +7,7 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: eksctl
   name: roboshop
-  namespace: default
+  namespace: roboshop
   resourceVersion: "17023"
   uid: 1254f47b-905b-4ad8-aad2-e82ddc93520c
 ---
