@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
   mapRoles: |
-    - rolearn: arn:aws:iam::634758830486:role/eksctl-roboshop-nodegroup-spot-NodeInstanceRole-bLI7kyoFRT5A
+    - rolearn: arn:aws:iam::634758830486:role/eksctl-roboshop-nodegroup-spot-NodeInstanceRole-QZ85BgufAW0E
       groups:
       - system:bootstrappers
       - system:nodes
