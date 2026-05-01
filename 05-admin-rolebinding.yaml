@@ -5,7 +5,7 @@ metadata:
   namespace: roboshop
 subjects:
 - kind: User
-  name: hemanchandra
+  name: heman
   apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: Role
