@@ -1,0 +1,48 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: roboshop-trainee
+  namespace: roboshop
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: roboshop-trainee
+  namespace: roboshop
+subjects:
+- kind: Group
+  name: roboshop-trainee
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: roboshop-trainee
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: v1
+data:
+  mapRoles: |
+    - rolearn: arn:aws:iam::634758830486:role/eksctl-roboshop-nodegroup-spot-NodeInstanceRole-QZ85BgufAW0E
+      groups:
+      - system:bootstrappers
+      - system:nodes
+      username: system:node:{{EC2PrivateDNSName}} 
+
+  mapUsers: |
+    - userarn: arn:aws:iam::634758830486:user/chandra
+      username: chandra
+      groups:
+        - roboshop-trainee
+    - userarn: arn:aws:iam::634758830486:user/varsha
+      username: varsha
+      groups:
+        - roboshop-trainee
+        
+        
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: kube-system
