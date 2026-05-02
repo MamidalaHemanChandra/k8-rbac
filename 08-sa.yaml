@@ -2,12 +2,11 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::634758830486:role/eksctl-roboshop-addon-iamserviceaccount-defau-Role1-20PQY9flz6gc
-  creationTimestamp: "2026-05-01T18:05:26Z"
+    eks.amazonaws.com/role-arn: arn:aws:iam::634758830486:role/eksctl-roboshop-addon-iamserviceaccount-robos-Role1-a4zSh9HDtSl4
+  creationTimestamp: "2026-05-02T06:45:27Z"
   labels:
     app.kubernetes.io/managed-by: eksctl
-  name: roboshop
+  name: secrets-sa
   namespace: roboshop
-  resourceVersion: "17023"
-  uid: 1254f47b-905b-4ad8-aad2-e82ddc93520c
----
+  resourceVersion: "5037"
+  uid: bae54263-f788-4a3c-a54e-8253c677e4fd
